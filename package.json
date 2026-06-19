@@ -2,7 +2,7 @@
   "name": "primehorizon",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/nhickjonel-ctrl/primehorizon.git",
+  "homepage": "https://github.io",
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
     "@openmeteo/sdk": "^1.27.2",
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env PUBLIC_URL=/primehorizon/ react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -47,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^10.1.0",
     "gh-pages": "^6.3.0"
   }
 }

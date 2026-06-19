@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/nhickjonel-ctrl/primehorizon.git/static/css/main.0079837a.css",
+    "main.js": "/nhickjonel-ctrl/primehorizon.git/static/js/main.e9186365.js",
+    "index.html": "/nhickjonel-ctrl/primehorizon.git/index.html",
+    "main.0079837a.css.map": "/nhickjonel-ctrl/primehorizon.git/static/css/main.0079837a.css.map",
+    "main.e9186365.js.map": "/nhickjonel-ctrl/primehorizon.git/static/js/main.e9186365.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0079837a.css",
+    "static/js/main.e9186365.js"
+  ]
+}

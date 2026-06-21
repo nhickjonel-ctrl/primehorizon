@@ -232,7 +232,7 @@
     border-top: 4px solid #1F5D96;
     }
 
-    /* ── Tick labels — percent-positioned to align under the curve exactly ─────── */
+    /* Tick labels — percent-positioned to align under the curve exactly */
     .wx-curve-ticks {
     position: relative;
     height: 36px;
@@ -257,7 +257,7 @@
     }
     .wx-curve-tick.now .wx-curve-tick-label { color: #1F5D96; font-weight: 700; }
 
-    /* ── Daily table ─────────────────────────────────────────────────────────── */
+    /* Daily table*/
     .wx-daily-table {
     display: flex;
     flex-direction: column;
@@ -334,7 +334,7 @@
     transition: width 0.4s ease;
     }
 
-    /* ── Rain outlook — ring-gauge grid, always fills the card height ──────────── */
+    /* Rain outlook — ring-gauge grid, always fills the card height */
     .wx-rain-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -409,7 +409,7 @@
     margin-left: 1px;
     }
 
-    /* ── Atmospheric 4-up grid ───────────────────────────────────────────────── */
+    /* Atmospheric 4-up grid */
     .wx-atmo-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -444,7 +444,7 @@
     .wx-atmo-unit { font-size: 11px; font-weight: 400; color: #9aaab8; margin-left: 2px; }
     .wx-atmo-trend { font-size: 9px; color: #9aaab8; font-weight: 500; margin-bottom: 8px; }
 
-    /* ── Bar Meter ───────────────────────────────────────────────────────────── */
+    /* Bar Meter */
     .wx-bar-meter-track {
     height: 5px;
     background: #EAF2FB;

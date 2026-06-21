@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+:root {
+  --navy-primary: #2b5c8f;
+  --navy-dark: #1f456c;
+  --navy-text: #1a3a5c;
+  --sky-accent: #bce1f7;
+  --sky-pale: #eaf3fb;
+  --sky-pale-2: #f3f8fd;
+}
+
 /* Main Canvas Background Wrapper */
 .login-page-container {
   margin: 0;
@@ -33,7 +42,7 @@
 /* LEFT PANEL STYLE */
 .left-panel {
   width: 42%;
-  background-color: #2b5c8f;
+  background-color: var(--navy-primary);
   position: relative;
   padding: 40px;
   display: flex;
@@ -47,12 +56,12 @@
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 14px; /* Slightly increased gap for optimal positioning */
+  gap: 14px;
   z-index: 3;
 }
 
 .logo-icon {
-  width: 44px; /* Scaled up to give the rain and cloud proper legibility */
+  width: 44px;
   height: auto;
 }
 
@@ -91,7 +100,7 @@
   font-weight: 500;
 }
 
-/* CSS Vector Shapes Reproduction */
+/* CSS Vector Shapes Reproduction (left panel) */
 .geometric-art-shapes {
   position: absolute;
   top: 0;
@@ -110,7 +119,7 @@
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  border: 45px solid #bce1f7;
+  border: 45px solid var(--sky-accent);
   opacity: 0.8;
 }
 
@@ -133,19 +142,61 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
+  overflow: hidden;
+}
+
+/* Soft geometric accents echoing the left panel, kept pale so they sit behind the form */
+.right-panel::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 30px solid var(--sky-pale);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.right-panel::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  right: 25%;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: var(--sky-pale-2);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .right-panel h2 {
-  font-size: 28px;
+  font-size: 38px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--navy-text);
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+.right-panel .subtitle {
+  font-size: 14px;
+  font-weight: 300;
+  color: #8a97a5;
   margin: 0 0 35px 0;
+  position: relative;
+  z-index: 1;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .input-group {
@@ -172,7 +223,7 @@
 }
 
 .input-group input:focus {
-  border-color: #2b5c8f;
+  border-color: var(--navy-primary);
   box-shadow: 0 4px 12px rgba(43, 92, 143, 0.1);
 }
 
@@ -180,6 +231,8 @@
 
 .link-signup {
   color: #666666;
+  position: relative;
+  z-index: 1;
 }
 
 .link-signup strong {
@@ -189,11 +242,13 @@
 
 .link-forgot {
   color: #666666;
+  position: relative;
+  z-index: 1;
 }
 
 /* Submit Action Button */
 .btn-login {
-  background-color: #2b5c8f;
+  background-color: var(--navy-primary);
   color: #ffffff;
   border: none;
   padding: 14px;
@@ -206,10 +261,12 @@
   transition: background-color 0.2s ease, transform 0.1s ease;
   width: 45%;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .btn-login:hover {
-  background-color: #1f456c;
+  background-color: var(--navy-dark);
 }
 
 .btn-login:active {
@@ -226,10 +283,11 @@
   font-size: 11px;
   color: #666666;
   line-height: 1.6;
+  z-index: 1;
 }
 
 .support-footer a {
-  color: #2b5c8f;
+  color: var(--navy-primary);
   text-decoration: underline;
 }
 

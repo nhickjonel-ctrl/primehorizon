@@ -95,7 +95,7 @@ export const Login = () => {
                 </div>
 
                 <div className="right-panel">
-                    <h2>Login</h2>
+                    <h2>Log in</h2>
                     
                     <form onSubmit={handleLogin} className="login-form">
                         <div className="input-group">

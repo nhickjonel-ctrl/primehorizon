@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-    /* ── Keyframes ───────────────────────────────────────────────────── */
+    /* Keyframes */
     @keyframes shimmer {
     0%   { background-position: 200% 0; }
     100% { background-position: -200% 0; }
@@ -14,7 +14,7 @@
     to   { opacity: 1; transform: scale(1); }
     }
 
-    /* ── Reset ───────────────────────────────────────────────────────── */
+    /* Reset*/
     *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -26,7 +26,7 @@
     border-radius: 4px;
     }
 
-    /* ── Root / Page ─────────────────────────────────────────────────── */
+    /*  Root / Page  */
     .ph-root {
     font-family: 'Poppins', sans-serif;
     /* Matches Login page background */
@@ -38,7 +38,7 @@
     color: #1a1a1a;
     }
 
-    /* ── Header ──────────────────────────────────────────────────────── */
+    /*  Header  */
     .ph-header {
     background-color: #2b5c8f;
     position: sticky;
@@ -209,7 +209,7 @@
     animation: fadeUp 0.35s ease;
     }
 
-    /* ── Card shared base ────────────────────────────────────────────── */
+    /*  Card shared base  */
     .ph-hero-card,
     .ph-sun-card,
     .ph-right-col {
@@ -219,7 +219,7 @@
     overflow: hidden;
     }
 
-    /* ── Hero Card ───────────────────────────────────────────────────── */
+    /*  Hero Card  */
     .ph-hero-card {
     position: relative;
     padding: 24px;
@@ -404,7 +404,7 @@
     margin-top: 16px;
     }
 
-    /* ── Stat Chip ───────────────────────────────────────────────────── */
+    /* Stat Chip */
     .ph-stat-chip {
     background: #ffffff;
     border: 1px solid #e8eff7;
@@ -459,7 +459,7 @@
     margin-top: 1px;
     }
 
-    /* ── Sun Summary Card ────────────────────────────────────────────── */
+    /* Sun Summary Card */
     .ph-sun-card {
     padding: 20px 24px;
     transition: box-shadow 0.25s, transform 0.25s;
@@ -558,7 +558,7 @@
     margin-top: 2px;
     }
 
-    /* ── Right Column / Forecast Panel ──────────────────────────────── */
+    /* Right Column / Forecast Panel */
     .ph-right-col {
     padding: 20px 22px;
     display: flex;
@@ -639,7 +639,7 @@
     font-weight: 300;
     }
 
-    /* ── Forecast Row ────────────────────────────────────────────────── */
+    /* Forecast Row */
     .ph-forecast-row {
     display: flex;
     align-items: center;
@@ -723,7 +723,7 @@
     margin-top: 2px;
     }
 
-    /* ── Skeleton ────────────────────────────────────────────────────── */
+    /* Skeleton */
     .ph-skeleton {
     border-radius: 8px;
     background: linear-gradient(90deg, #dce8f5 25%, #eaf2fb 50%, #dce8f5 75%);
@@ -731,14 +731,14 @@
     animation: shimmer 1.5s infinite;
     }
 
-    /* ── Sun Arc SVG ─────────────────────────────────────────────────── */
+    /* Sun Arc SVG  */
     .ph-sun-arc {
     width: 90px;
     height: 46px;
     flex-shrink: 0;
     }
 
-    /* ── Search Box ──────────────────────────────────────────────────── */
+    /* Search Box */
     .ph-search-wrap {
     position: relative;
     flex: 1;
@@ -822,7 +822,7 @@
     .ph-search-result-admin  { color: #9aaab8; }
     .ph-search-result-country { color: #b8c8d8; }
 
-    /* ── Responsive ──────────────────────────────────────────────────── */
+    /* Responsive */
     @media (max-width: 900px) {
     .ph-body {
         grid-template-columns: 1fr;

@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
     import WeatherExtended from "./Weatherextended";
     import "../css/Weatherextended.css";
 
-    // ─── SVG Icon Library ─────────────────────────────────────────────────────────
+    // SVG Icon Library
     const Icon = ({ name, size = 16, color = "currentColor" }) => {
     const icons = {
         wind: (
@@ -91,7 +91,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
     return icons[name] ?? null;
     };
 
-    // ─── Blue Palette Constants ───────────────────────────────────────────────────
+    // Blue Palette Constants
     const BLUE = {
     50:  "#EAF2FB",
     100: "#C2D9F0",
@@ -100,7 +100,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
     800: "#0C3F6E",
     };
 
-    // ─── WMO Weather Codes ────────────────────────────────────────────────────────
+    // WMO Weather Codes
     const WMO = {
     0:  { label: "Clear Sky",       icon: "☀️", bg: ["#e3effa","#d1e2f3"] },
     1:  { label: "Mainly Clear",    icon: "🌤️", bg: ["#dde8f5","#cdddf0"] },
@@ -126,7 +126,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
     };
     const getWmo = (code) => WMO[code] ?? { label: "Unknown", icon: "🌡️", bg: ["#d1e2f3","#c0d5ea"] };
 
-    // ─── Helpers ──────────────────────────────────────────────────────────────────
+    // Helpers
     const toF         = (c)    => Math.round(c * 9 / 5 + 32);
     const displayTemp = (c, u) => u === "F" ? toF(c) : Math.round(c);
     const windVal     = (k, u) => u === "F" ? Math.round(k * 0.621) : Math.round(k);
@@ -137,8 +137,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
     const pressureStr = (hPa, u) => hPa == null ? "–" : u === "F" ? `${(hPa * 0.02953).toFixed(2)} inHg` : `${Math.round(hPa)} hPa`;
     const visStr      = (m, u)   => m == null ? "–" : u === "F" ? `${(m / 1000 * 0.621).toFixed(1)} mi` : `${(m / 1000).toFixed(1)} km`;
 
-    // ─── API ─────────────────────────────────────────────────────────────────────
-    // Custom error so the UI can tell "API is down" apart from other failures
+    // API
     class ApiDownError extends Error {
     constructor(message, status) {
         super(message);
@@ -188,7 +187,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
     return r.json();
     };
 
-    // ─── Sun Arc ──────────────────────────────────────────────────────────────────
+    // Sun Arc 
     function SunArc({ progress }) {
     const angle = Math.PI * Math.max(0, Math.min(1, progress));
     const cx = 5 + 60 * Math.cos(Math.PI - angle);
@@ -210,14 +209,14 @@ import { useCallback, useEffect, useRef, useState } from "react";
         );
     }
 
-    // ─── Skeleton ─────────────────────────────────────────────────────────────────
+    // Skeleton 
     function Skeleton({ h = 16, w = "100%", r = 8 }) {
     return (
         <div className="ph-skeleton" style={{ height: h, width: w, borderRadius: r }} />
     );
     }
 
-    // ─── Search Box ───────────────────────────────────────────────────────────────
+    // Search Box 
     function SearchBox({ onSelect, onApiError }) {
     const [query,   setQuery]   = useState("");
     const [results, setResults] = useState([]);
@@ -282,7 +281,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
     );
     }
 
-    // ─── Stat Chip ────────────────────────────────────────────────────────────────
+    // Stat Chip 
     function StatChip({ iconName, iconColor, iconBg, label, value, sub }) {
     return (
         <div className="ph-stat-chip">
@@ -298,7 +297,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
     );
     }
 
-    // ─── Forecast Row ─────────────────────────────────────────────────────────────
+    // Forecast Row 
     function ForecastRow({ label, sublabel, icon, temp, wind, humidity, unit, highlight }) {
     return (
         <div className={`ph-forecast-row${highlight ? " highlight" : ""}`}>
@@ -321,7 +320,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
     );
     }
 
-    // ─── Main Dashboard ───────────────────────────────────────────────────────────
+    // Main Dashboard 
     export default function WeatherDashboard() {
     const navigate = useNavigate();
 
@@ -357,7 +356,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
     const handleLogout = () => { localStorage.removeItem("user"); navigate("/login"); };
 
-    // ── Derived data ──────────────────────────────────────────────────────────
     const cur   = weather?.current;
     const daily = weather?.daily;
     const hrly  = weather?.hourly;
@@ -413,7 +411,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
     const dateStr = now.toLocaleDateString([], { weekday: "long", month: "long", day: "numeric" });
     const uvVal   = cur?.uv_index ?? daily?.uv_index_max?.[0] ?? 0;
 
-    // Dynamic backgrounds
     const heroBg = wmo && !loading
         ? `linear-gradient(145deg, ${wmo.bg[0]}, ${wmo.bg[1]})`
         : "rgba(255,255,255,0.9)";
@@ -421,11 +418,10 @@ import { useCallback, useEffect, useRef, useState } from "react";
     const uvTileBg     = "#F8FAFC";
     const uvTileBorder = "#E2E8F0";
 
-    // ── Render ────────────────────────────────────────────────────────────────
     return (
         <div className="ph-root">
 
-        {/* ════ HEADER ════════════════════════════════════════════════════════ */}
+        {/* HEADER*/}
         <header className="ph-header">
             <div className="ph-header-inner">
 
@@ -481,13 +477,12 @@ import { useCallback, useEffect, useRef, useState } from "react";
             </div>
         </header>
 
-        {/* ════ BODY ══════════════════════════════════════════════════════════ */}
+        {/* BODY */}
         <main className="ph-body">
 
-            {/* ── LEFT COLUMN (60%) ─────────────────────────────────────────── */}
             <div className="ph-left-col">
 
-            {/* ── Hero Weather Card ──────────────────────────────────────── */}
+            {/* Hero Weather Card  */}
             <div className="ph-hero-card" style={{ background: heroBg }}>
                 <div className="ph-hero-inner">
                 {error && (
@@ -586,7 +581,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
                 </div>
             </div>
 
-            {/* ── Sun Summary Card ───────────────────────────────────────── */}
+            {/* Sun Summary Card  */}
             <div className="ph-sun-card">
                 <div className="ph-sun-card-header">
                 <div className="ph-sun-card-icon-wrap">
@@ -633,8 +628,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
                 ) : null}
             </div>
             </div>
-
-            {/* ── RIGHT COLUMN (40%): Forecast ──────────────────────────────── */}
             <div className="ph-right-col">
             <div className="ph-forecast-header">
                 <span className="ph-forecast-title">Forecast</span>

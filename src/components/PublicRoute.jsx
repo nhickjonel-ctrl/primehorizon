@@ -3,7 +3,8 @@
     export default function PublicRoute({ children }) {
     const user = localStorage.getItem("user");
 
-    // If logged in block login page
+    console.log("USER FROM LOCALSTORAGE: loggedOut", user);
+
     if (user) {
         return <Navigate to="/dashboard" replace />;
     }

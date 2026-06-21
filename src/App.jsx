@@ -12,7 +12,6 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          {/* 1. Redirect the blank root path "/" straight to your login page */}
           <Route path="/" element={<Navigate to="/login" replace />} />
 
           <Route

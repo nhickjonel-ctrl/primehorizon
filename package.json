@@ -23,11 +23,11 @@
     "yup": "^1.7.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "cross-env PUBLIC_URL=/primehorizon/ react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
+},
   "eslintConfig": {
     "extends": [
       "react-app",

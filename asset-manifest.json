@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/primehorizon/static/css/main.0079837a.css",
-    "main.js": "/primehorizon/static/js/main.e9186365.js",
+    "main.css": "/primehorizon/static/css/main.dfd30d06.css",
+    "main.js": "/primehorizon/static/js/main.8fdc45f0.js",
     "index.html": "/primehorizon/index.html",
-    "main.0079837a.css.map": "/primehorizon/static/css/main.0079837a.css.map",
-    "main.e9186365.js.map": "/primehorizon/static/js/main.e9186365.js.map"
+    "main.dfd30d06.css.map": "/primehorizon/static/css/main.dfd30d06.css.map",
+    "main.8fdc45f0.js.map": "/primehorizon/static/js/main.8fdc45f0.js.map"
   },
   "entrypoints": [
-    "static/css/main.0079837a.css",
-    "static/js/main.e9186365.js"
+    "static/css/main.dfd30d06.css",
+    "static/js/main.8fdc45f0.js"
   ]
 }

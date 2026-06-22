@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+    import { useCallback, useEffect, useRef, useState } from "react";
     import { useNavigate } from "react-router-dom";
     import "../css/Dashboard.css";
     import WeatherExtended from "./Weatherextended";
@@ -187,29 +187,32 @@ import { useCallback, useEffect, useRef, useState } from "react";
     return r.json();
     };
 
-    // Sun Arc 
+    // Sun Arc
     function SunArc({ progress }) {
-    const angle = Math.PI * Math.max(0, Math.min(1, progress));
-    const cx = 5 + 60 * Math.cos(Math.PI - angle);
-    const cy = 34 - 30 * Math.sin(angle);
-        return (
-            <svg viewBox="0 0 70 40" fill="none" className="ph-sun-arc">
-                <defs>
-                    <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor={BLUE[100]} />
-                        <stop offset="100%" stopColor={BLUE[600]} />
-                    </linearGradient>
-                </defs>
-                <path d="M5 36 Q35 4 65 36" stroke="#E2E8F0" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-                <path d="M5 36 Q35 4 65 36" stroke="url(#arcGrad)" strokeWidth="2.5" fill="none"
-                    strokeDasharray="92" strokeDashoffset={92 - 92 * progress} strokeLinecap="round" />
-                <circle cx={cx} cy={cy - 2} r="5" fill={BLUE[600]} />
-                <circle cx={cx} cy={cy - 2} r="8" fill={BLUE[600]} fillOpacity="0.2" />
-            </svg>
-        );
-    }
+    const t = Math.max(0, Math.min(1, progress));
 
-    // Skeleton 
+    // Quadratic Bézier matching d="M5 36 Q35 4 65 36"
+    const cx = (1 - t) ** 2 * 5 + 2 * (1 - t) * t * 35 + t ** 2 * 65;
+    const cy = (1 - t) ** 2 * 36 + 2 * (1 - t) * t * 4 + t ** 2 * 36;
+
+    return (
+        <svg viewBox="0 0 70 40" fill="none" className="ph-sun-arc">
+            <defs>
+                <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor={BLUE[100]} />
+                    <stop offset="100%" stopColor={BLUE[600]} />
+                </linearGradient>
+            </defs>
+            <path d="M5 36 Q35 4 65 36" stroke="#E2E8F0" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+            <path d="M5 36 Q35 4 65 36" stroke="url(#arcGrad)" strokeWidth="2.5" fill="none"
+                strokeDasharray="92" strokeDashoffset={92 - 92 * t} strokeLinecap="round" />
+            <circle cx={cx} cy={cy} r="5" fill={BLUE[600]} />
+            <circle cx={cx} cy={cy} r="8" fill={BLUE[600]} fillOpacity="0.2" />
+        </svg>
+    );
+}
+
+    // Skeleton
     function Skeleton({ h = 16, w = "100%", r = 8 }) {
     return (
         <div className="ph-skeleton" style={{ height: h, width: w, borderRadius: r }} />
